@@ -1,8 +1,4 @@
-
-
-// Importações
-import app from "./app";
-
+// Importações.
+import app from './app';
 
 app.listen(3333);
-
