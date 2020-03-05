@@ -7,7 +7,7 @@ module.exports = {
 
     define: {
         timestamps: true,
-        underscore: true,
-        underscoreAll: true,
+        underscored: true,
+        underscoredAll: true,
     },
 };
