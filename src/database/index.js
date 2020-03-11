@@ -9,6 +9,7 @@ class Database {
         this.init();
     }
 
+    // Faz a conecxão com a base de dados e carrega os 'models'.
     init() {
         this.connection = new Sequelize(databaseConfig);
         models.map(model => model.init(this.connection));
