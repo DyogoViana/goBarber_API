@@ -10,7 +10,7 @@ class UserController {
             return resposta.status(400).json({ error: 'User already exists.' });
         }
 
-        const { id, name, email, provider } = await User.create(require.body);
+        const { id, name, email, provider } = await User.create(requisicao.body);
 
         return resposta.json({
             id,
