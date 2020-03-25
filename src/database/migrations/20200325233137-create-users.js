@@ -1,9 +1,8 @@
 module.exports = {
-    // Add altering commands here. Return a promise to correctly handle asynchronicity.
     up: (queryInterface, Sequelize) => {
         return queryInterface.createTable('users', {
             id: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.INTERGER,
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
@@ -23,21 +22,20 @@ module.exports = {
             },
             provider: {
                 type: Sequelize.BOOLEAN,
-                defaultvalue: false,
+                defaultValue: false,
                 allowNull: false,
             },
             created_at: {
                 type: Sequelize.DATE,
                 allowNull: false,
             },
-            update_at: {
+            updated_at: {
                 type: Sequelize.DATE,
                 allowNull: false,
             },
         });
     },
 
-    // Add reverting commands here. Return a promise to correctly handle asynchronicity.
     down: queryInterface => {
         return queryInterface.dropTable('users');
     },
