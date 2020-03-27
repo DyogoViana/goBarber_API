@@ -1,11 +1,9 @@
 goBarber Web
 ============
 
-**goBarber Web** permite a visualização da agenda dos prestadores de<br>
-serviço no qual consome uma _API Rest_ e Backend criado em _NodeJS_.
+<p> **goBarber Web** permite a visualização da agenda dos prestadores de serviço no qual consome uma _API Rest_ e Backend criado em _NodeJS_.</p>
 
-Autenticação _JWT_, recebendo um token no qual o usuário fica salvo no _Redux_,<br>
-tendo acesso a informações e avatar.
+<p>Autenticação _JWT_, recebendo um token no qual o usuário fica salvo no _Redux_, tendo acesso a informações e avatar.</p>
 
 ### Backend:
 - Node Express
