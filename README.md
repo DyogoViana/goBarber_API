@@ -8,8 +8,8 @@ Autenticação _JWT_, recebendo um token no qual o usuário fica salvo no _Redux
 tendo acesso a informações e avatar.
 
 ### Backend:
-    - Node Express
-    - Axios
-    - MongoDB
-    - Redix
-    - PostgreSQL
+- Node Express
+- Axios
+- MongoDB
+- Redix
+- PostgreSQL
