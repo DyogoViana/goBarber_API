@@ -9,5 +9,5 @@ Autenticação _JWT_, recebendo um token no qual o usuário fica salvo no _Redux
 - Node Express
 - Axios
 - MongoDB
-- Redix
+- Redux
 - PostgreSQL
