@@ -10,18 +10,16 @@ module.exports = {
                 primaryKey: true,
             },
             date: {
-                allowNull: false,
                 type: Sequelize.DATE,
+                allowNull: false,
             },
-            // Usuário que vai fazer o agendamento.
             user_id: {
                 type: Sequelize.INTEGER,
                 references: { model: 'users', key: 'id' },
                 onUpdate: 'CASCADE',
-                onDelete: 'SET NULL', // Mantem o histórico do agendamento dos usuários deletados.
+                onDelete: 'SET NULL',
                 allowNull: true,
             },
-            // Prestador de serviço que vai atender ao agendamento.
             provider_id: {
                 type: Sequelize.INTEGER,
                 references: { model: 'users', key: 'id' },
@@ -29,7 +27,6 @@ module.exports = {
                 onDelete: 'SET NULL',
                 allowNull: true,
             },
-            // Marca a data que foi cancelado o agendamento.
             canceled_at: {
                 type: Sequelize.DATE,
             },

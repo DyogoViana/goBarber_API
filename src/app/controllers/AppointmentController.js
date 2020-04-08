@@ -8,10 +8,14 @@ import Appointment from '../models/Appointment';
 
 class AppointmentController {
     async index(request, response) {
+        const { page = 1 } = request.query;
+
         const appointment = await Appointment.findAll({
             where: { user_id: request.userId, canceled_at: null },
             order: ['date'],
             attributes: ['id', 'date'],
+            limit: 20,
+            offset: (page - 1) * 20,
             include: [
                 {
                     model: User,
@@ -34,7 +38,7 @@ class AppointmentController {
     async store(request, response) {
         const schema = Yup.object().shape({
             provider_id: Yup.number().required(),
-            date: Yup.date(),
+            date: Yup.date().required(),
         });
 
         if (!(await schema.isValid(request.body))) {
