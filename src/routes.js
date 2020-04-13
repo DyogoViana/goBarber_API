@@ -28,6 +28,7 @@ routes.use(authMiddleware);
 
 // Put
 routes.put('/users', UserController.update);
+routes.put('/notifications/:id', NotificationController.update);
 
 // Get
 routes.get('/providers', ProviderController.index);
