@@ -36,4 +36,7 @@ routes.get('/appointments', AppointmentController.index);
 routes.get('/schedule', ScheduleController.index);
 routes.get('/notifications', NotificationController.index);
 
+// Delete
+routes.delete('/appointments/:id', AppointmentController.delete);
+
 export default routes;
