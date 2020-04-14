@@ -7,11 +7,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js",
+    "queue": "nodemon src/server.js",
     "dev:debug": "nodemon --inspect src/server.js"
   },
   "dependencies": {
     "acorn": "^7.1.1",
     "bcryptjs": "^2.4.3",
+    "bee-queue": "^1.2.3",
     "date-fns": "^2.0.0-beta.5",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.3",
