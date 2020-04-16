@@ -9,6 +9,10 @@ module.exports = {
                 autoIncrement: true,
                 primaryKey: true,
             },
+            name: {
+                type: Sequelize.STRING, // revisar depois se precisa desse name [BUG]:Importante
+                allowNull: false,
+            },
             date: {
                 type: Sequelize.DATE,
                 allowNull: false,

@@ -112,7 +112,7 @@ class AppointmentController {
 
     // Delete.
     async delete(request, response) {
-        const appointment = await Appointment.findByPk(require.params.id, {
+        const appointment = await Appointment.findByPk(request.params.id, {
             include: [
                 {
                     model: User,
@@ -127,7 +127,7 @@ class AppointmentController {
             ],
         });
 
-        if (appointment.user_id !== require.userId) {
+        if (appointment.user_id !== request.userId) {
             return response.status(401).json({
                 error: "You don't have permission to cancel this appointment.",
             });
