@@ -1,4 +1,5 @@
 // Importações
+import 'dotenv/config';
 import express from 'express';
 import path from 'path';
 import Youch from 'youch';
@@ -36,9 +37,15 @@ class App {
     // Quando um middleware recebe 4 parâmetros, ele reconhece como um middleware de tratamento de exceções.
     exceptionHandler() {
         this.server.use(async (error, request, response, next) => {
-            const errors = await new Youch(error, request).toJSON();
+            if (process.env.NODE_ENV === 'development') {
+                const errors = await new Youch(error, request).toJSON();
 
-            return response.status(500).json(errors);
+                return response.status(500).json(errors);
+            }
+
+            return response
+                .status(500)
+                .json({ error: 'Internal server error.' });
         });
     }
 }

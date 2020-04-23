@@ -11,7 +11,7 @@ module.exports = {
             },
             name: {
                 type: Sequelize.STRING, // revisar depois se precisa desse name [BUG]:Importante
-                allowNull: false,
+                allowNull: true, // teste, antes tava false.
             },
             date: {
                 type: Sequelize.DATE,
