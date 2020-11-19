@@ -1,5 +1,3 @@
-// ScheduleController.js
-
 import { startOfDay, endOfDay, parseISO } from 'date-fns';
 import { Op } from 'sequelize'; // Operador
 import User from '../models/User';
@@ -18,6 +16,7 @@ class ScheduleController {
         }
 
         const { date } = request.query;
+
         const parsedDate = parseISO(date);
 
         const appointments = await Appointment.findAll({
@@ -31,6 +30,14 @@ class ScheduleController {
                     ],
                 },
             },
+
+            include: [
+                {
+                    model: User,
+                    as: 'user',
+                    attributes: ['name'],
+                },
+            ],
 
             order: ['date'],
         });
